@@ -7,10 +7,12 @@ import { useEffect, useState } from "react";
 import Button from "@/components/shared/Button";
 import LogoSGID from "@/public/assets/img/logo-sgid.png";
 import Image from "next/image";
+import { Tooltip as FlowbiteTooltip } from "flowbite-react";
 import { useRouter } from "next/router";
 import { toast } from "react-toastify";
 import LogoShopee from "@/public/assets/svg/icon-shopee.svg";
 import LogoLazada from "@/public/assets/svg/icon-lazada.svg";
+import LogoInfo from "@/public/assets/svg/icon-info.svg";
 import dayjs from "dayjs";
 import { Line } from "react-chartjs-2";
 import {
@@ -24,6 +26,7 @@ import {
   Legend
 } from "chart.js";
 import { chartData, chartLabels, chartOptions } from "./chart";
+import { mockTransactions } from "./mock";
 
 const Dashboard = () => {
   const supabaseClient = useSupabaseClient();
@@ -91,7 +94,7 @@ const Dashboard = () => {
       if (!errorTwo) {
         let chartDataArr = chartLabels.map((data) => 0);
         setTransactions(
-          dataTwo.map((data) => {
+          mockTransactions.map((data) => {
             // Format data for the table
             const formattedDate = dayjs(data.created_at).format(
               "MMM DD, YYYY h:mm A"
@@ -104,12 +107,43 @@ const Dashboard = () => {
               return true;
             });
 
+            const breakdownJSON = JSON.parse(data.breakdown);
+            let formattedBreakdown = `Breakdown: \n\n`;
+            // Loop through breakdown JSON
+            if (data.breakdown) {
+              Object.keys(breakdownJSON).forEach(function (key, index) {
+                const formattedKey = key.charAt(0).toUpperCase() + key.slice(1);
+                if (index !== Object.keys(breakdownJSON).length - 1) {
+                  formattedBreakdown += `${formattedKey}: ${breakdownJSON[key]}\n`;
+                } else {
+                  console.log("ran ehre");
+                  formattedBreakdown += `${formattedKey}: ${breakdownJSON[key]}`;
+                }
+              });
+            }
+
             return [
               {
                 value: (
-                  <p>
-                    + ${data.water_footprint} <sub>litres (ℓ)</sub>
-                  </p>
+                  <div className="flex">
+                    <p>
+                      + {data.water_footprint} <sub> ℓ</sub>
+                    </p>
+                    <FlowbiteTooltip
+                      content={
+                        <div style={{ whiteSpace: "pre" }}>
+                          {formattedBreakdown}
+                        </div>
+                      }
+                    >
+                      <Image
+                        className="cursor-pointer ml-2"
+                        src={LogoInfo}
+                        width={15}
+                        alt="info"
+                      />
+                    </FlowbiteTooltip>
+                  </div>
                 ),
                 isLink: false
               },

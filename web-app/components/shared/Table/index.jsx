@@ -1,9 +1,8 @@
 import Image from "next/image";
-import { Tooltip } from "flowbite-react";
 
 const Table = ({ columns, rows }) => {
   return (
-    <div className="relative overflow-x-auto shadow rounded-lg">
+    <div className="relative shadow rounded-lg">
       <table className="w-full text-sm text-left text-gray-500">
         <thead className="text-xs text-gray-700 uppercase bg-gray-50">
           <tr>
@@ -30,7 +29,7 @@ const Table = ({ columns, rows }) => {
                   scope="row"
                   className="px-6 py-4 font-bold text-primary-700"
                 >
-                  <Tooltip content="Tooltip content">{row[0].value}</Tooltip>
+                  {row[0].value}
                 </th>
                 <td className="px-6 py-4 font-semibold">{row[1].value}</td>
                 <td className="px-6 py-4">{row[2].value}</td>
