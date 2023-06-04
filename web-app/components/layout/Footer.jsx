@@ -95,7 +95,7 @@ const Footer = () => {
                   <Image src={Logo} width={200} alt="Logo" />
                 </Link>
                 <p className="mt-2 text-gray-600">
-                  Sustainable Shopper Companion
+                  Water-friendly Shopping Companion
                 </p>
                 <span className="mt-4 flex items-center">
                   <Image
@@ -121,7 +121,7 @@ const Footer = () => {
             {/* Bottom */}
             <div className="flex justify-between pb-8 pt-4">
               <p className="text-gray-500">
-                Copyright &copy; 2023 EcoCart. All rights reserved.
+                Copyright &copy; 2023 AquaWise. All rights reserved.
               </p>
               {/* Socials */}
               <div></div>

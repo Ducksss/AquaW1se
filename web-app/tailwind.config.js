@@ -93,18 +93,18 @@ module.exports = {
       // Untitled ui color scheme
       colors: {
         primary: {
-          DEFAULT: "#16B364",
-          25: "#F6FEF9",
-          50: "#EDFCF2",
-          100: "#D3F8DF",
-          200: "#AAF0C4",
-          300: "#73E2A3",
-          400: "#3CCB7F",
-          500: "#16B364",
-          600: "#099250",
-          700: "#087443",
-          800: "#095C37",
-          900: "#084C2E"
+          DEFAULT: "#2970FF",
+          25: "#F5F8FF",
+          50: "#EFF4FF",
+          100: "#D1E0FF",
+          200: "#B2CCFF",
+          300: "#84ADFF",
+          400: "#528BFF",
+          500: "#2970FF",
+          600: "#155EEF",
+          700: "#004EEB",
+          800: "#0040C1",
+          900: "#00359E"
         },
         // primary: {
         //   DEFAULT: "#9E77ED",

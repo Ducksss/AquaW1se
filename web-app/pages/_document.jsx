@@ -6,7 +6,7 @@ export default function Document() {
       <Head>
         <meta
           name="description"
-          content="Plan, organise and get your work done."
+          content="Your Water-friendly Shopping Companion"
         />
         <link rel="icon" href="/favicon.ico" />
         <link

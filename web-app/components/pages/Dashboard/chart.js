@@ -17,14 +17,14 @@ export const chartData = {
   labels: chartLabels,
   datasets: [
     {
-      borderColor: "rgba(8, 116, 67, 1)",
+      borderColor: "#004EEB",
       fill: "origin",
       lineTension: 0.3,
       backgroundColor: (context) => {
         const ctx = context.chart.ctx;
         const gradient = ctx.createLinearGradient(0, 0, 0, 180);
-        gradient.addColorStop(0, "rgba(60, 203, 127, 0.8)");
-        gradient.addColorStop(1, "rgba(60, 203, 127, 0)");
+        gradient.addColorStop(0, "#84ADFF");
+        gradient.addColorStop(1, "rgba(132, 173, 255, 0)");
         return gradient;
       }
     }

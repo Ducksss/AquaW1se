@@ -182,11 +182,11 @@ const Dashboard = () => {
           </div>
           <div className="mt-8">
             <h2 className="text-lg font-semibold text-gray-500">
-              Total Water<sub>2</sub> Consumption
+              Total Water Consumption
             </h2>
             <p></p>
             <h1 className="text-display-sm font-bold text-gray-900">
-              {totalCO} <sub>(ℓ)</sub>
+              {totalCO} <sub>&#8467;</sub>
             </h1>
             <Line
               className="mt-5"

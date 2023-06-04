@@ -37,7 +37,7 @@ const Login = () => {
   };
 
   return (
-    <MainLayout title="Login | EcoCart">
+    <MainLayout title="Login | AquaWise">
       <div className="smh-container w-full">
         <div
           className={`smh-card${
@@ -62,7 +62,7 @@ const Login = () => {
             Login with Google{" "}
           </Button>
           <p className="mt-8 text-sm text-gray-400 text-center">
-            If you do not have an EcoCart account yet, it will automatically be
+            If you do not have an AquaWise account yet, it will automatically be
             created once you sign in.
           </p>
         </div>
