@@ -313,7 +313,7 @@ function convertDataToEverydayExamples(litres: number) {
 
 async function getProductCarbonFootprintData(productInformation) {
   const res = await axios.post(
-    'https://npfbkkvsi73gj6bzxrimkxgg5m0obfbw.lambda-url.ap-southeast-1.on.aws/',
+    'http://localhost:3002/api/generate-cart-water-footprint',
     {
       categories: productInformation.categories,
       product_title: productInformation['Product Name'],
