@@ -312,24 +312,28 @@ function convertDataToEverydayExamples(litres: number) {
 }
 
 async function getProductCarbonFootprintData(productInformation) {
-  const res = await axios.get(
-    'http://localhost:3002/api/generate-product-water-footprint',
-    {
-      categories: productInformation.categories,
-      product_title: productInformation['Product Name'],
-      ship_to: 'Singapore',
-      ship_from: productInformation['Ships From'] || 'Singapore',
-    },
-    {
-      headers: {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+  try {
+    const res = await axios.post(
+      'http://localhost:3002/api/generate-product-water-footprint',
+      {
+        categories: productInformation.categories,
+        product_title: productInformation['Product Name'],
+        ship_to: 'Singapore',
+        ship_from: productInformation['Ships From'] || 'Singapore',
       },
-    },
-  );
+      {
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+        },
+      },
+    );
 
-  return res.data;
+    return res.data;
+  } catch (err) {
+    console.log("Error occured while fetching product's carbon footprint data", err);
+  }
 }
 
 // Function to call on product pagex

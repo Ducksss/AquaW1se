@@ -1,4 +1,4 @@
-'''lambda function to calculate the total water footprint of a list of products'''
+'''lambda function to calculate the total carbon footprint of a list of products'''
 # packages
 import json
 import re
@@ -12,12 +12,12 @@ from src.logger import logger
 openai.api_key = config("OPENAI_API_KEY")
 
 PROMPT_TEMPLATE = """
-Provide the total estimated water footprint of the given products:
+Provide the total estimated carbon footprint of the given products:
 {product_titles}
 No matter what, you must give a rough estimate of the value of CO2 produced, infer from product titles and product type e.g. phones and electronics.
 
 Reply in the following template:
-water footprint: XXX kg CO2
+Carbon Footprint: XXX kg CO2
 """
 
 def lambda_handler(event, context):

@@ -16,6 +16,7 @@
     "autoprefixer": "10.4.14",
     "chart.js": "^4.3.0",
     "cookies-next": "^2.1.1",
+    "cors": "^2.8.5",
     "dayjs": "^1.11.7",
     "eslint": "8.41.0",
     "eslint-config-next": "13.4.4",

@@ -39,27 +39,41 @@ export default async function handler(req, res) {
         const { product_titles } = req.body;
         const string_product_titles = product_titles.join(", ");
 
+        return {
+            'statusCode': 200,
+            'headers': {
+                'Access-Control-Allow-Headers': 'Content-Type',
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Methods': 'OPTIONS,POST,GET'
+            },
+        };
+
         // Fetch user data from a third-party API
-        const completion = await openai.createCompletion({
-            model: 'davinci',
-            temperature: 1,
-            frequency_penalty: 0.2,
-            presence_penalty: 0.05,
-            top_p: 1,
-            prompt: prompt_template.replace("<<PRODUCT NAME>>", string_product_titles),
-            max_tokens: 512
-        });
+        // const completion = await openai.createCompletion({
+        //     model: 'davinci',
+        //     temperature: 1,
+        //     frequency_penalty: 0.2,
+        //     presence_penalty: 0.05,
+        //     top_p: 1,
+        //     prompt: prompt_template.replace("<<PRODUCT NAME>>", string_product_titles),
+        //     max_tokens: 512
+        // });
 
         // Parse the response
 
-        console.log(completion.data.choices[0]);
-        const parsed_completion = JSON.parse(completion.data.choices[0]);
+        // console.log(completion.data.choices[0]);
+        // const parsed_completion = JSON.parse(completion.data.choices[0]);
 
         // Return the user data
-        return res.status(200).json({
-            message: "Success",
-            completion_content: completion.data.choices[0].text
-        });
+        // return res.status(200).json({
+        //     message: "Success",
+        //     completion_content: 512
+        //     // completion.data.choices[0].text
+        // })
+        //     .headers({
+        //         'Access-Control-Allow-Origin': '*',
+        //         'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+        //     });
     } catch (err) {
         console.log(">>> Error: ", err);
         return res.status(500).json({
