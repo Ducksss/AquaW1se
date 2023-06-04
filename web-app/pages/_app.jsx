@@ -3,6 +3,8 @@ import { useState } from "react";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 
+import "react-tooltip/dist/react-tooltip.css";
+
 import "@/styles/globals.css";
 import ErrorBoundary from "@/components/pages/ErrorBoundary";
 import { createPagesBrowserClient } from "@supabase/auth-helpers-nextjs";
