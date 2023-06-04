@@ -140,7 +140,7 @@ const Dashboard = () => {
     {
       name: (
         <p>
-          CO<sub>2</sub> Emission
+          Water Footprint <sub>(ℓ)</sub>
         </p>
       )
     },
