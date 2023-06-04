@@ -7,7 +7,7 @@ const sgidClient = new SgidClient({
   redirectUri:
     process.env.NEXT_PUBLIC_ENVIRONMENT !== "DEV"
       ? "https://ecocart-lifehack2023.netlify.app/api/redirect"
-      : "http://localhost:3001/api/redirect"
+      : "http://localhost:3002/api/redirect"
 });
 
 export { sgidClient };
