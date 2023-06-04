@@ -98,7 +98,7 @@ const Dashboard = () => {
             );
             chartLabels.every((month, index) => {
               if (formattedDate.includes(month)) {
-                chartDataArr[index] += data.co_emission;
+                chartDataArr[index] += data.water_footprint;
                 return false;
               }
               return true;
@@ -108,7 +108,7 @@ const Dashboard = () => {
               {
                 value: (
                   <p>
-                    + ${data.co_emission} <sub>kg</sub>
+                    + ${data.water_footprint} <sub>litres (ℓ)</sub>
                   </p>
                 ),
                 isLink: false
@@ -182,11 +182,11 @@ const Dashboard = () => {
           </div>
           <div className="mt-8">
             <h2 className="text-lg font-semibold text-gray-500">
-              Total CO<sub>2</sub> Consumption
+              Total Water<sub>2</sub> Consumption
             </h2>
             <p></p>
             <h1 className="text-display-sm font-bold text-gray-900">
-              {totalCO} <sub>kg</sub>
+              {totalCO} <sub>(ℓ)</sub>
             </h1>
             <Line
               className="mt-5"

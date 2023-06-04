@@ -405,7 +405,7 @@ const runScriptProductPage = (function () {
             const arbitaryNumber = Math.floor(Math.random() * 100 + 5);
             const relativeUnits = convertDataToEverydayExamples(arbitaryNumber);
             const data = `Did you the process of making '${productInformation['Product Name']
-              }' requires <b>${arbitaryNumber}</b>litres (ℓ) of water? That is equivalent to <b>${relativeUnits.join(
+              }' requires <b>${arbitaryNumber}</b> litres (ℓ) of water? That is equivalent to <b>${relativeUnits.join(
                 ', ',
               )}</b>!`;
             await productTitleWrapper.parentElement.prepend(
@@ -421,7 +421,7 @@ const runScriptProductPage = (function () {
           const arbitaryNumber = Math.floor(Math.random() * (1000 - 100) + 300);
           const relativeUnits = convertDataToEverydayExamples(arbitaryNumber);
           const data = `Did you the process of making '${productInformation['Product Name']
-            }' requires <b>${arbitaryNumber}</b>litres (ℓ) of water? That is equivalent to <b>${relativeUnits.join(
+            }' requires <b>${arbitaryNumber}</b> litres (ℓ) of water? That is equivalent to <b>${relativeUnits.join(
               ', ',
             )}</b>!`;
 

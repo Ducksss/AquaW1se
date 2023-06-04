@@ -86,8 +86,8 @@ import axios from 'axios';
             console.log('user found and inserting to transaction db...');
             const { error } = await supabase.from('transactions').insert({
               user_uuid: resp.user.id,
-              co_emission: response
-                ? response.data.co2_footprint
+              water_footprint: response
+                ? response.data.water_footprint
                 : arbitaryNumber * allProductTitles.length,
               merchant: 'Shopee',
               transaction_link: 'https://shopee.sg/cart',
