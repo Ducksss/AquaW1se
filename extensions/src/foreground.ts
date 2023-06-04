@@ -332,7 +332,10 @@ async function getProductCarbonFootprintData(productInformation) {
 
     return res.data;
   } catch (err) {
-    console.log("Error occured while fetching product's carbon footprint data", err);
+    console.log(
+      "Error occured while fetching product's carbon footprint data",
+      err,
+    );
   }
 }
 
@@ -448,7 +451,7 @@ const addReinforcement = async function (data: string) {
 
   const node = document.createElement('div');
   node.id = 'ecocart-flag';
-  node.innerHTML = `<div class="ecocart-banner" style="border: 1px solid let(--petalc); color: let(--petalc); background: #CBF0C1; padding: 1rem; font: 0.9rem sans-serif; margin-bottom: 1rem; padding-left: 1rem; padding-top: 1rem; padding-bottom: 1rem; border-radius: 5px;">
+  node.innerHTML = `<div class="ecocart-banner" style="border: 1px solid let(--petalc); color: let(--petalc); background: #D1E0FF; padding: 1rem; font: 0.9rem sans-serif; margin-bottom: 1rem; padding-left: 1rem; padding-top: 1rem; padding-bottom: 1rem; border-radius: 5px;">
       <span style="display: flex; justify-content: center; align-items: center;">
         <span class="tooltip">
           <img src="https://cdn-icons-png.flaticon.com/512/665/665049.png" style="height: 17px; width: 17px; margin-right: 10px;">
@@ -459,8 +462,8 @@ const addReinforcement = async function (data: string) {
         </p>
       </span>
       <div style="display: flex; justify-content: flex-end; align-items: center;">
-        <img src="https://ecocart-lifehack2023.netlify.app/favicon.ico" style="height: 17px; width: 17px; margin-right: 10px;" />
-        <h1 style="font-size: 12px;">EcoCart</h1>
+        <img src="http://localhost:3002/favicon.ico" style="height: 17px; width: 17px; margin-right: 10px;" />
+        <h1 style="font-size: 12px;">AquaWise</h1>
       </div>  
     </div>`;
 

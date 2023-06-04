@@ -61,9 +61,9 @@ const PREFERRED_BRANDS = [
               // Prepend the pill to the card
               const pill = document.createElement('div');
               pill.innerHTML = `
-                  <div style="color: #084C2E; width: 100%; border-radius: 3px; border: 1px solid #099250; white-space: nowrap; display: inline-block; font-size: 0.8em; padding: 0.125rem 0.25rem; text-align: center; margin-bottom: 10px;">
-                  <img src="https://ecocart-lifehack2023.netlify.app/favicon.ico" style="height: 10px; width: 10px; margin-right: 5px;" />
-                      EcoCart Preferred
+                  <div style="color: #528BFF; width: 100%; border-radius: 3px; border: 1px solid #004EEB; white-space: nowrap; display: inline-block; font-size: 0.8em; padding: 0.125rem 0.25rem; text-align: center; margin-bottom: 10px;">
+                  <img src="http://localhost:3002/favicon.ico" style="height: 10px; width: 10px; margin-right: 5px;" />
+                    AquaWise Preferred
                   </div>
                 `;
               card.querySelector('.hpDKMN')?.prepend(pill);

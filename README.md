@@ -4,19 +4,19 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/keiloktql/LifeHack2023-EcoCart">
+  <a href="https://github.com/Ducksss/HackLah2023-AquaWise">
     <img src="web-app/public/android-chrome-512x512.png" alt="Logo" width="120" height="120">
   </a>
 
-<h3 align="center">EcoCart</h3>
+<h3 align="center">AquaWise</h3>
 
   <p align="center">
-    Sustainable Shopping Companion Powered by AI
+    Because every drop counts! AI-Powered Water-friendly Shopping Companion
     <br />
     <br />
-    <a href="https://github.com/keiloktql/LifeHack2023-EcoCart/issues">Report Bugs</a>
+    <a href="https://github.com/Ducksss/HackLah2023-AquaWise/issues">Report Bugs</a>
     ·
-    <a href="https://github.com/keiloktql/LifeHack2023-EcoCart/issues">Request Features</a>
+    <a href="https://github.com/Ducksss/HackLah2023-AquaWise/issues">Request Features</a>
   </p>
 </div>
 
@@ -40,15 +40,17 @@
 
 <a href="#about-the-project"></a>
 
-![](https://github.com/keiloktql/LifeHack2023-EcoCart/blob/main/promotion/poster-1.png)
+![](https://github.com/Ducksss/HackLah2023-AquaWise/blob/main/promotion/poster-1.png)
 
-EcoCart is an AI-powered Sustainable Shopping Companion that helps users reduce their water footprint. It consists of a user-friendly dashboard web app and a browser extension for seamless transaction tracking.
+AquaWise is an innovative AI-powered Water Conservation Companion designed to address water scarcity issues. It serves as a user-friendly dashboard web app and a browser extension for seamless tracking of water consumption.
 
-With EcoCart, users can effortlessly monitor their water footprint by integrating the browser extension with popular e-commerce platforms. The AI technology analyzes the data, providing detailed insights into the environmental impact of each purchase.
+With AquaWise, users can effortlessly monitor and manage their water footprint by integrating the browser extension with popular online platforms. The advanced AI technology analyzes water usage data, providing detailed insights into the water impact of each purchase and activity.
 
-The intuitive dashboard empowers users to track their progress, and make informed decisions. The interactive charts and gamified experience guide users towards eco-friendly alternatives and conscious consumption habits.
+The intuitive AquaWise dashboard empowers users to track their water usage, set conservation goals, and make informed decisions. Interactive visualizations and personalized recommendations guide users towards water-efficient alternatives and promote conscious water consumption habits.
 
-EcoCart promotes sustainable living by combining AI, a user-friendly dashboard, and a transaction-tracking web extension. Together, we can make a positive impact on the environment through mindful shopping choices.
+AquaWise plays a crucial role in promoting water sustainability by combining AI technology, a user-friendly dashboard, and a water-tracking web extension. Together, we can make a positive impact on water scarcity by fostering a culture of responsible water consumption.
+
+Join us on this journey with AquaWise, and together, let's work towards a sustainable future where every drop counts.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -135,7 +137,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 - Chai Pin Zheng (Frontend Engineer/Web Extension Engineer) - [LinkedIn](https://www.linkedin.com/in/chai-pin-zheng-5610921aa/)
 
-- Tan Yu Hoe (AI Engineer/Backend Engineer) - [LinkedIn](https://www.linkedin.com/in/yu-hoe-tan/)
+- Ang Kah Shin (AI Engineer) - [LinkedIn](https://www.linkedin.com/in/kahshinang/)
 
 Project Link: [https://github.com/keiloktql/LifeHack2023-EcoCart](https://github.com/keiloktql/LifeHack2023-EcoCart)
 
@@ -151,7 +153,8 @@ Project Link: [https://github.com/keiloktql/LifeHack2023-EcoCart](https://github
 
 ## More Images
 
-![](https://github.com/keiloktql/LifeHack2023-EcoCart/blob/main/promotion/poster-2.png)
+![](https://github.com/Ducksss/HackLah2023-AquaWise/blob/main/promotion/poster-2.png)
 
-![](https://github.com/keiloktql/LifeHack2023-EcoCart/blob/main/promotion/poster-3.png)
-# HackLah2023-EcoCart
+![](https://github.com/Ducksss/HackLah2023-AquaWise/blob/main/promotion/poster-3.png)
+
+![](https://github.com/Ducksss/HackLah2023-AquaWise/blob/main/promotion/poster-4.png)

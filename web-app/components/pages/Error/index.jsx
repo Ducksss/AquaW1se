@@ -22,7 +22,7 @@ function Error({ statusCode = 500 }) {
 
   return (
     <MainLayout
-      title={`${statusCode} Error | EcoCart`}
+      title={`${statusCode} Error | AquaWise`}
       className="mx-auto flex w-full max-w-screen-xl flex-col justify-center px-16"
     >
       <p className="font-semibold text-primary-700">{statusCode} error</p>

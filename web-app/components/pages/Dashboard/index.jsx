@@ -94,7 +94,7 @@ const Dashboard = () => {
       if (!errorTwo) {
         let chartDataArr = chartLabels.map((data) => 0);
         setTransactions(
-          mockTransactions.map((data) => {
+          dataTwo.map((data) => {
             // Format data for the table
             const formattedDate = dayjs(data.created_at).format(
               "MMM DD, YYYY h:mm A"
@@ -111,14 +111,25 @@ const Dashboard = () => {
             let formattedBreakdown = `Breakdown: \n\n`;
             // Loop through breakdown JSON
             if (data.breakdown) {
-              Object.keys(breakdownJSON).forEach(function (key, index) {
-                const formattedKey = key.charAt(0).toUpperCase() + key.slice(1);
-                if (index !== Object.keys(breakdownJSON).length - 1) {
-                  formattedBreakdown += `${formattedKey}: ${breakdownJSON[key]}\n`;
+              Object.keys(breakdownJSON).forEach(function (key1, index1) {
+                if (index1 !== Object.keys(breakdownJSON).length - 1) {
+                  formattedBreakdown += `Product: ${key1}\n`;
                 } else {
-                  console.log("ran ehre");
-                  formattedBreakdown += `${formattedKey}: ${breakdownJSON[key]}`;
+                  formattedBreakdown += `\n\nProduct: ${key1}\n`;
                 }
+
+                Object.keys(breakdownJSON[key1]).forEach(function (
+                  key2,
+                  index2
+                ) {
+                  const formattedKey =
+                    key2.charAt(0).toUpperCase() + key2.slice(1);
+                  if (index2 !== Object.keys(breakdownJSON[key1]).length - 1) {
+                    formattedBreakdown += `- ${formattedKey}: ${breakdownJSON[key1][key2]}\n`;
+                  } else {
+                    formattedBreakdown += `- ${formattedKey}: ${breakdownJSON[key1][key2]}`;
+                  }
+                });
               });
             }
 
@@ -166,7 +177,6 @@ const Dashboard = () => {
         setRawChartData(chartDataArr);
         setTotalCO(chartDataArr.reduce((a, b) => a + b, 0));
       }
-      console.log(dataTwo);
     })();
   }, []);
 
@@ -202,7 +212,7 @@ const Dashboard = () => {
   );
 
   return (
-    <MainLayout title={"Dashboard | EcoCart"}>
+    <MainLayout title={"Dashboard | AquaWise"}>
       {sgidVerified ? (
         <div className="max-w-screen-xl flex flex-col m-auto justify-center px-16">
           <div className="mt-5">
@@ -257,7 +267,8 @@ const Dashboard = () => {
               Verification Required.
             </h1>
             <p className="text-md text-gray-600">
-              To access EcoCart's services, please verify your account via SGID.
+              To access AquaWise's services, please verify your account via
+              SGID.
             </p>
           </div>
 

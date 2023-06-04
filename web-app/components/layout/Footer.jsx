@@ -52,7 +52,7 @@ const Footer = () => {
                 Join our newsletter
               </h2>
               <p className="text-gray-600">
-                Stay updated with the latest happenings from EcoCart.
+                Stay updated with the latest happenings from AquaWise.
               </p>
             </div>
             <div className="ml-2 w-full">
