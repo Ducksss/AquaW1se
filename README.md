@@ -42,9 +42,9 @@
 
 ![](https://github.com/keiloktql/LifeHack2023-EcoCart/blob/main/promotion/poster-1.png)
 
-EcoCart is an AI-powered Sustainable Shopping Companion that helps users reduce their carbon footprint. It consists of a user-friendly dashboard web app and a browser extension for seamless transaction tracking.
+EcoCart is an AI-powered Sustainable Shopping Companion that helps users reduce their water footprint. It consists of a user-friendly dashboard web app and a browser extension for seamless transaction tracking.
 
-With EcoCart, users can effortlessly monitor their carbon footprint by integrating the browser extension with popular e-commerce platforms. The AI technology analyzes the data, providing detailed insights into the environmental impact of each purchase.
+With EcoCart, users can effortlessly monitor their water footprint by integrating the browser extension with popular e-commerce platforms. The AI technology analyzes the data, providing detailed insights into the environmental impact of each purchase.
 
 The intuitive dashboard empowers users to track their progress, and make informed decisions. The interactive charts and gamified experience guide users towards eco-friendly alternatives and conscious consumption habits.
 

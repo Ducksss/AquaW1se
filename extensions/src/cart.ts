@@ -61,9 +61,9 @@ import axios from 'axios';
 
     const node2 = document.createElement('div');
     node2.id = 'ecocart-text';
-    // total co2 emission for the cart
+    // total water usage for the cart
     const arbitaryNumber = Math.floor(Math.random() * (100 - 10) + 100);
-    node2.innerHTML = `<p style="padding-left: .5rem;">Estimated CO2 emission: ${
+    node2.innerHTML = `<p style="padding-left: .5rem;">Estimated Water Usage: ${
       response
         ? response?.data?.co2_footprint
         : arbitaryNumber * allProductTitles.length

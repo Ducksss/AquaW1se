@@ -141,7 +141,7 @@ const makePopup = (function () {
     const genPopup = function (elem, score) {
       const { quote, author } =
         INSPIRATIONAL_ENIVORNMENTAL_QUOTES[
-          Math.floor(Math.random() * INSPIRATIONAL_ENIVORNMENTAL_QUOTES.length)
+        Math.floor(Math.random() * INSPIRATIONAL_ENIVORNMENTAL_QUOTES.length)
         ];
       const populateNav = function (theNav) {
         if (theNav) {
@@ -218,27 +218,37 @@ const makePopup = (function () {
 // Function to kill the plants
 const killFlower = function (score = 1) {
   // if the score is 1, kill 4 plants
-  // if the score is 2 kill 3 plants
-  // if the score is 3 kill 2 plants
-  // if the score is 4 kill 1 plant
-  // if the score is 5 kill 0 plants
   if (score == 1) {
     document.getElementsByClassName('pb1')[0].classList.add('dead');
     document.getElementsByClassName('pb2')[0].classList.add('dead');
     document.getElementsByClassName('pb3')[0].classList.add('dead');
     document.getElementsByClassName('pb4')[0].classList.add('dead');
-  } else if (score == 2) {
+    return
+  }
+
+  // if the score is 2 kill 3 plants
+  if (score == 2) {
     document.getElementsByClassName('pb1')[0].classList.add('dead');
     document.getElementsByClassName('pb2')[0].classList.add('dead');
     document.getElementsByClassName('pb3')[0].classList.add('dead');
-  } else if (score == 3) {
+    return;
+  }
+
+  // if the score is 3 kill 2 plants
+  if (score == 3) {
     document.getElementsByClassName('pb1')[0].classList.add('dead');
     document.getElementsByClassName('pb2')[0].classList.add('dead');
-  } else if (score == 4) {
-    document.getElementsByClassName('pb1')[0].classList.add('dead');
-  } else if (score == 5) {
-    console.log('full');
+    return;
   }
+
+  // if the score is 4 kill 1 plant
+  if (score == 4) {
+    document.getElementsByClassName('pb1')[0].classList.add('dead');
+    return;
+  }
+
+  // if the score is 5 kill 0 plants
+  console.log('full');
 };
 
 // Function to regen petals over time
@@ -286,7 +296,7 @@ function getSpecificElement() {
   return document.querySelector('div.page-product__content');
 }
 
-function convertCO2ToUnit(grams) {
+function convertDataToEverydayExamples(grams) {
   const units = [
     { label: 'cigarettes', conversion: 21.8 },
     { label: 'car miles', conversion: 404 },
@@ -386,19 +396,18 @@ const runScriptProductPage = (function () {
         }
       }
 
-      // Query the api for the carbon footprint data
+      // Query the api for the water footprint data
       await getProductCarbonFootprintData(productInformation)
         .then(async (data) => {
           const content = data?.completion_content;
 
           if (content.includes('Sorry!')) {
             const arbitaryNumber = Math.floor(Math.random() * 100 + 5);
-            const relativeUnits = convertCO2ToUnit(arbitaryNumber);
-            const data = `Did you the process of making '${
-              productInformation['Product Name']
-            }' produces <b>${arbitaryNumber}</b>kg of CO2? That is equivalent to <b>${relativeUnits.join(
-              ', ',
-            )}</b>!`;
+            const relativeUnits = convertDataToEverydayExamples(arbitaryNumber);
+            const data = `Did you the process of making '${productInformation['Product Name']
+              }' requires <b>${arbitaryNumber}</b>litres (ℓ) of water? That is equivalent to <b>${relativeUnits.join(
+                ', ',
+              )}</b>!`;
             await productTitleWrapper.parentElement.prepend(
               await addReinforcement(data),
             );
@@ -410,12 +419,11 @@ const runScriptProductPage = (function () {
         })
         .catch(async () => {
           const arbitaryNumber = Math.floor(Math.random() * (1000 - 100) + 300);
-          const relativeUnits = convertCO2ToUnit(arbitaryNumber);
-          const data = `Did you the process of making '${
-            productInformation['Product Name']
-          }' produces <b>${arbitaryNumber}</b>kg of CO2? That is equivalent to <b>${relativeUnits.join(
-            ', ',
-          )}</b>!`;
+          const relativeUnits = convertDataToEverydayExamples(arbitaryNumber);
+          const data = `Did you the process of making '${productInformation['Product Name']
+            }' requires <b>${arbitaryNumber}</b>litres (ℓ) of water? That is equivalent to <b>${relativeUnits.join(
+              ', ',
+            )}</b>!`;
 
           await productTitleWrapper.parentElement.prepend(
             await addReinforcement(data),

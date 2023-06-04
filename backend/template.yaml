@@ -27,7 +27,7 @@ Resources:
     Properties:
       FunctionName: !Join ["-", [!Ref AppName, "GenerateProductCOMessage"]]
       Description: >
-        Function to generate Product Carbon Emission Message
+        Function to generate Product Water Usage Message
         By querying GPT 3.5-Turbo
       PackageType: Image
       Architectures:
@@ -47,7 +47,7 @@ Resources:
   #   Properties:
   #     FunctionName: !Join ["-", [!Ref AppName, "GenerateProductCOMessageV2"]]
   #     Description: >
-  #       Function to generate Product Carbon Emission Message
+  #       Function to generate Product Water Usage Message
   #       By querying GPT 3.5-Turbo
   #     PackageType: Image
   #     Architectures:
@@ -75,7 +75,7 @@ Resources:
     Properties:
       FunctionName: !Join ["-", [!Ref AppName, "CalculateTotalCO"]]
       Description: >
-        Function to calculate total Product Carbon Emission
+        Function to calculate total Product Water Usage
         By querying GPT 3.5-Turbo
       PackageType: Image
       Architectures:

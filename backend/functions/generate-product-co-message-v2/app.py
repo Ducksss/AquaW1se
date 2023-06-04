@@ -23,7 +23,7 @@ Or else, give a random fun-fact related to environmental conservation based on t
 No matter what, you must give a rough estimate of the value of CO2 produced, infer from based on the product title, product categories and Rekognition Detection.
 
 Reply in the following template:
-Did you know the process of making {product_title} produces XXX of CO2 g?
+Did you know the process of making {product_title} requires XXX of CO2 g?
 That is equivalent to XXX cigarettes, XXX car miles, XXX smartphone charges!
 """
 

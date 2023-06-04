@@ -176,7 +176,7 @@ const Dashboard = () => {
               Welcome back, {user.user_metadata.name}
             </h1>
             <p className="text-md text-gray-600">
-              Track and manage your carbon footprint from your shopping
+              Track and manage your water footprint from your shopping
               transactions.
             </p>
           </div>

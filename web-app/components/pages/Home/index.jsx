@@ -15,7 +15,7 @@ const HomePage = () => {
           Sustainable Shopping Companion Powered by AI
         </h1>
         <p className="text-xl text-gray-600">
-          Track and manage your carbon footprint from your shopping transactions
+          Track and manage your water footprint from your shopping transactions
           with the power of AI.
         </p>
         <Button

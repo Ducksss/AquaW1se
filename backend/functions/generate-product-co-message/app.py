@@ -12,7 +12,7 @@ openai.api_key = config("OPENAI_API_KEY")
 
 PROMPT_TEMPLATE = """
 Give a fun-fact related to environmental conservation, related to the given product.
-XXX refers to an estimated quantitative value of CO2 emissions.
+XXX refers to an estimated quantitative value of water usages.
 Give an answer no matter what, you must give a rough estimate of the value of CO2 produced based on all information provided.
 Or else, provide the error response.
 
@@ -23,7 +23,7 @@ Ship to: {ship_to}
 Ship from: {ship_from}
 
 Reply in the following template, do consider all information provided:
-Did you know the process of making {product_title}/{categories} <select one> produces XXX of CO2 kg?
+Did you know the process of making {product_title}/{categories} <select one> requires XXX of CO2 kg?
 That is equivalent to XXX cigarettes, XXX car miles, XXX smartphone charges!
 
 Error template:
