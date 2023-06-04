@@ -141,7 +141,7 @@ const makePopup = (function () {
     const genPopup = function (elem, score) {
       const { quote, author } =
         INSPIRATIONAL_ENIVORNMENTAL_QUOTES[
-        Math.floor(Math.random() * INSPIRATIONAL_ENIVORNMENTAL_QUOTES.length)
+          Math.floor(Math.random() * INSPIRATIONAL_ENIVORNMENTAL_QUOTES.length)
         ];
       const populateNav = function (theNav) {
         if (theNav) {
@@ -223,7 +223,7 @@ const killFlower = function (score = 1) {
     document.getElementsByClassName('pb2')[0].classList.add('dead');
     document.getElementsByClassName('pb3')[0].classList.add('dead');
     document.getElementsByClassName('pb4')[0].classList.add('dead');
-    return
+    return;
   }
 
   // if the score is 2 kill 3 plants
@@ -250,9 +250,6 @@ const killFlower = function (score = 1) {
   // if the score is 5 kill 0 plants
   console.log('full');
 };
-
-// Function to regen petals over time
-let tHnd; // global so that I can turn it off elsewhere
 
 // Function to remove the popup gently and reset the score
 const removePopup = function (): void {
@@ -281,9 +278,6 @@ const forceClosePopup = function (): void {
   activePopup = setTimeout(function () {
     return true;
   }, 2500);
-
-  // Stop petals from regenerating
-  clearInterval(tHnd);
 };
 
 // Get the wrapper element
@@ -296,18 +290,21 @@ function getSpecificElement() {
   return document.querySelector('div.page-product__content');
 }
 
-function convertDataToEverydayExamples(grams) {
+/**
+ * Converts the given water footprint in litres into everyday examples.
+ * @param {number} litres - The water footprint in litres.
+ * @returns {string[]} An array of converted units with quantities and labels.
+ */
+function convertDataToEverydayExamples(litres: number) {
   const units = [
-    { label: 'cigarettes', conversion: 21.8 },
-    { label: 'car miles', conversion: 404 },
-    { label: 'smartphone charges', conversion: 0.5 },
+    { label: 'Showers', conversion: 40 },
+    { label: 'toilet flushes', conversion: 6 },
+    { label: 'Olmpic swimming pools', conversion: 2500000 },
     // Add more units and their conversion factors as needed
   ];
 
   const convertedUnits = units.map((unit) => {
-    // round to 2 decimal places
-    const quantity = Math.round((grams / unit.conversion) * 100) / 100;
-
+    const quantity = Math.round(litres / unit.conversion);
     return `${quantity} ${unit.label}`;
   });
 
@@ -404,10 +401,11 @@ const runScriptProductPage = (function () {
           if (content.includes('Sorry!')) {
             const arbitaryNumber = Math.floor(Math.random() * 100 + 5);
             const relativeUnits = convertDataToEverydayExamples(arbitaryNumber);
-            const data = `Did you the process of making '${productInformation['Product Name']
-              }' requires <b>${arbitaryNumber}</b> litres (ℓ) of water? That is equivalent to <b>${relativeUnits.join(
-                ', ',
-              )}</b>!`;
+            const data = `Did you the process of making '${
+              productInformation['Product Name']
+            }' requires <b>${arbitaryNumber}</b> litres (ℓ) of water to produce? That is equivalent to <b>${relativeUnits.join(
+              ', ',
+            )}</b>!`;
             await productTitleWrapper.parentElement.prepend(
               await addReinforcement(data),
             );
@@ -420,10 +418,11 @@ const runScriptProductPage = (function () {
         .catch(async () => {
           const arbitaryNumber = Math.floor(Math.random() * (1000 - 100) + 300);
           const relativeUnits = convertDataToEverydayExamples(arbitaryNumber);
-          const data = `Did you the process of making '${productInformation['Product Name']
-            }' requires <b>${arbitaryNumber}</b> litres (ℓ) of water? That is equivalent to <b>${relativeUnits.join(
-              ', ',
-            )}</b>!`;
+          const data = `Did you the process of making '${
+            productInformation['Product Name']
+          }' requires <b>${arbitaryNumber}</b> litres (ℓ) of water to produce? That is equivalent to <b>${relativeUnits.join(
+            ', ',
+          )}</b>!`;
 
           await productTitleWrapper.parentElement.prepend(
             await addReinforcement(data),
