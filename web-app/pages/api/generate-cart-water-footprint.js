@@ -7,9 +7,9 @@ Follow strictly to the example shown below:
 
 [EXAMPLE]
 User: "Phone"
-Model: {
-"product" : "Phone",
-    "breakdown": {
+"{
+  "product" : "Phone",
+  "breakdown": {
     "screen" : 500,
     "battery": 200,
     "processor: 150,
@@ -17,11 +17,11 @@ Model: {
     "others": 500,
     "assembly": 200,
     "transportation": 150
-},
-Total_consumption: 1800,
-measurement: "litre",
-"fun_fact": "If we compare this to the average amount of water a person needs per day for drinking, which is about 2 liters, the water used to produce a single smartphone could keep a person hydrated for about 750 days, which is more than two years!"
-}
+  },
+  Total_consumption: 1800,
+  measurement: "litre",
+  "fun_fact": "If we compare this to the average amount of water a person needs per day for drinking, which is about 2 liters, the water used to produce a single smartphone could keep a person hydrated for about 750 days, which is more than two years!"
+}"
 
 User: "<<PRODUCT NAME>>"
 `;
@@ -34,28 +34,36 @@ const openai = new OpenAIApi(configuration);
 
 export default async function handler(req, res) {
     try {
-        console.log(req);
-        console.log(req.headers);
-        console.log(req.body);
-
-        const { categories, product_title, ship_to, ship_from } = req.body;
+        // Get the user input from the request body
+        // ['a', 'b', 'c'] => "a, b, c"
+        const { product_titles } = req.body;
+        const string_product_titles = product_titles.join(", ");
 
         // Fetch user data from a third-party API
         const completion = await openai.createCompletion({
-            model: 'gpt-3.5-turbo',
+            model: 'davinci',
             temperature: 1,
             frequency_penalty: 0.2,
             presence_penalty: 0.05,
             top_p: 1,
-            prompt: prompt_template.replace("<<PRODUCT NAME>>", product_title),
+            prompt: prompt_template.replace("<<PRODUCT NAME>>", string_product_titles),
+            max_tokens: 512
         });
+
+        // Parse the response
+
+        console.log(completion.data.choices[0]);
+        const parsed_completion = JSON.parse(completion.data.choices[0]);
 
         // Return the user data
         return res.status(200).json({
             message: "Success",
-            completion_content: completion.data.choices[0].text,
+            completion_content: completion.data.choices[0].text
         });
     } catch (err) {
         console.log(">>> Error: ", err);
+        return res.status(500).json({
+            message: err.message
+        });
     }
 }

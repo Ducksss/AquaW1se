@@ -312,8 +312,8 @@ function convertDataToEverydayExamples(litres: number) {
 }
 
 async function getProductCarbonFootprintData(productInformation) {
-  const res = await axios.post(
-    'http://localhost:3002/api/generate-cart-water-footprint',
+  const res = await axios.get(
+    'http://localhost:3002/api/generate-product-water-footprint',
     {
       categories: productInformation.categories,
       product_title: productInformation['Product Name'],
@@ -323,6 +323,8 @@ async function getProductCarbonFootprintData(productInformation) {
     {
       headers: {
         'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
       },
     },
   );
@@ -398,6 +400,7 @@ const runScriptProductPage = (function () {
         .then(async (data) => {
           const content = data?.completion_content;
 
+          console.log('content', content);
           if (content.includes('Sorry!')) {
             const arbitaryNumber = Math.floor(Math.random() * 100 + 5);
             const relativeUnits = convertDataToEverydayExamples(arbitaryNumber);

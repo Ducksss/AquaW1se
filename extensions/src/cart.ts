@@ -32,13 +32,15 @@ import axios from 'axios';
     let response = null;
     try {
       response = await axios.post(
-        'https://udl4feeh2rzckgxuhxlecj3bba0wsoqx.lambda-url.ap-southeast-1.on.aws/',
+        'http://localhost:3002/api/generate-cart-water-footprint',
         {
           product_titles: productsArr,
         },
         {
           headers: {
             'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
           },
         },
       );
