@@ -29,6 +29,7 @@ window.onload = function () {
 const SUPABASE_PUBLIC_URL = 'https://raxkpyazhqcszrhtppyi.supabase.co';
 const SUPABASE_PUBLIC_ANON_KEY =
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJheGtweWF6aHFjc3pyaHRwcHlpIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODUyNTY3OTksImV4cCI6MjAwMDgzMjc5OX0.RDomwou8YUMUufWN3CwOK0Rz_eHfQu5Tbvf-FF9ZiI4';
+
 export const supabase = createClient(
   SUPABASE_PUBLIC_URL,
   SUPABASE_PUBLIC_ANON_KEY,

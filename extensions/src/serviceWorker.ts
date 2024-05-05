@@ -1,5 +1,6 @@
-import { initializeStorageWithDefaults } from './storage';
 console.log('service worker running');
+
+import { initializeStorageWithDefaults } from './storage';
 chrome.runtime.onInstalled.addListener(async () => {
   // Here goes everything you want to execute after extension initialization
 
@@ -26,20 +27,20 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
   try {
     if (
       changeInfo.status === 'complete' &&
-      /^https:\/\/shopee.sg/.test(tab.url)
+      /^https:\/\/(?:www\.)?amazon\.(?:[a-z]{2,})(?:\.[a-z]{2})?(?:\.[a-z]{2})?/.test(
+        tab.url,
+      )
     ) {
-      console.log('Shopee loading completed.');
+      console.info('Amazon loading completed. Injecting script.');
 
       let scriptFile = './foreground.js';
-
       if (tab.url.endsWith('cart')) {
         scriptFile = './cart.js';
-      } else if (tab.url.includes('search')) {
+      } else if (tab.url.includes('s?k=')) {
         scriptFile = './search.js';
       }
 
-      console.info("Executing script: '" + scriptFile + "'");
-
+      console.info("Script chosen to inject: ", scriptFile);
       chrome.scripting
         .executeScript({
           target: { tabId: tabId },
@@ -52,10 +53,10 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
           console.log(err);
         });
     } else {
-      console.log('Shopee loading not completed.');
+      console.log('Amazon loading not completed.');
     }
   } catch (err) {
-    console.log('Background error:', err);
+    console.error('serviceWorker error:', err);
   }
 });
 
