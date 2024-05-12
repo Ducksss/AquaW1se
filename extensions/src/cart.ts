@@ -1,8 +1,8 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
-import { createClient, User } from '@supabase/supabase-js';
-import { getCurrentUser, supabase } from './popup';
 import axios from 'axios';
+import { getCurrentUser, supabase } from './popup';
+import { createClient, User } from '@supabase/supabase-js';
 
 (() => {
   function getWrapper(): Element | null {
@@ -65,11 +65,10 @@ import axios from 'axios';
     node2.id = 'ecocart-text';
     // total water usage for the cart
     const arbitaryNumber = Math.floor(Math.random() * (100 - 10) + 100);
-    node2.innerHTML = `<p style="padding-left: .5rem;">Estimated Water Usage: ${
-      response
+    node2.innerHTML = `<p style="padding-left: .5rem;">Estimated Water Usage: ${response
         ? response?.data?.co2_footprint
         : arbitaryNumber * allProductTitles.length
-    } kg</p>`;
+      } kg</p>`;
     // Insert the button before the checkout button if there are no existing buttons with the same id
     if (checkoutFooter.querySelector('#ecocart-button') === null) {
       // Insert it before the last child
